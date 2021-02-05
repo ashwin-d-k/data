@@ -1,6 +1,9 @@
 # This program counts the frequency of occurence of words in a given text file
 import numpy as np
 
+import string
+
+
 counts = dict()
 
 handle = input("Enter the name of the file: ")
@@ -11,8 +14,7 @@ except:
     print("Error : Wrong file name or path")
     quit()
     
-letters = ('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q',
-           'r','s','t','u','v','x','y','z')
+letters = tuple(string.ascii_lowercase)
 
 for line in file:
     scrape = line.rstrip()
